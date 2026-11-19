@@ -1,8 +1,14 @@
 # Luna Chrome
 
 A permission-free Google Chrome theme tuned to the Windows XP Blue appearance
-in the Seelen UI reference. The New Tab page uses Bliss from the local Seelen
-wallpaper and retains Chrome's built-in search, shortcuts, and controls.
+in the Seelen UI reference. The optional Luna New Tab extension adds a classic
+Google search panel and editable shortcuts over Bliss.
+
+## Restore the approved 0.3 theme
+
+Check out tag `v0.3.0` in a separate clone or download its source. Reset your
+current Chrome theme in **Settings → Appearance**, then load the tagged
+`theme` folder as an unpacked theme.
 
 ## Install, update, or remove
 
@@ -20,6 +26,26 @@ and open a new tab.
 [Chrome's unpacked installation instructions](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
 and [theme removal instructions](https://support.google.com/chrome_webstore/answer/148695).
 
+## Use the Windows XP New Tab page
+
+1. Run `.\build_new_tab.ps1` in PowerShell from this
+   folder. This assembles a loadable extension in `dist/new-tab` with the
+   existing wallpaper.
+2. Open `chrome://extensions`, enable **Developer mode**, and use **Load
+   unpacked** on `dist/new-tab`. Open a new tab and choose **Keep it** if Chrome
+   asks whether to keep the changed New Tab page.
+3. Use **Manage shortcuts → Import** to open your local export, or **Add
+   shortcut** to enter sites individually. The edit button on each shortcut
+   lets you rename it, change its address, move it, or remove it.
+
+The extension asks only for local shortcut storage. Search goes straight to
+Google when you submit the form. Import appends new addresses in file order and
+skips existing addresses. Export makes a portable JSON file with names and URLs.
+Keep personal exports outside Git. Disabling Luna New Tab in
+`chrome://extensions` brings back Chrome's built-in New Tab and its shortcuts.
+Export before removing the extension if you want to keep the redesigned page's
+shortcut list.
+
 ## How the theme works
 
 | Surface | Treatment |
@@ -27,6 +53,7 @@ and [theme removal instructions](https://support.google.com/chrome_webstore/answ
 | Frame and inactive tabs | Glossy royal blue sampled from the Seelen reference. The tab textures use frame blue where the tab outline curves and a beveled face across the straighter middle. Unfocused windows use a quieter blue. |
 | Selected tab and toolbar | The shared texture paints a pale rectangular-looking face on the selected tab. Frame blue masks its curved shoulders in the focused window. A separate icy band starts the toolbar. |
 | Window controls | Windows Chrome samples a three-slot PNG for compact blue minimize and maximize plates and a red close plate. The plates are positioned behind Chrome's own symbols. |
+| New tab button | The native plus button uses the theme's tab-strip palette. Chrome controls its shape and interaction states. |
 | Address bar | The manifest requests a white field and dark-blue text. Chrome computes the appearance of the interaction states. |
 | New Tab | A centered, full-color photo behind Chrome's standard controls. Chrome displays a theme PNG at its native size and crops it to the window. The bundled image is sized for desktop use, including the reference display at 200% scale. |
 
@@ -41,8 +68,8 @@ and [Chromium Windows caption painting](https://raw.githubusercontent.com/chromi
 ## Regenerate the artwork
 
 The images are bundled. With Python 3, use `python .\build_assets.py` to rebuild
-the frame, tab, toolbar, and window-control PNGs. Edit the RGB stops in the script
-to adjust the gradients.
+the frame, tab, toolbar, window-control, and extension icon PNGs. Edit the RGB
+stops in the script to adjust the gradients.
 
 To rebuild the wallpaper PNG from your own local source, run this command from
 PowerShell. The script scales the photo to 1920 pixels wide and keeps its proportions.

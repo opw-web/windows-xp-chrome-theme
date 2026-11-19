@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Tab</title>
+  <link rel="icon" href="icons/window-16.png" sizes="16x16">
+  <link rel="icon" href="icons/window-32.png" sizes="32x32">
+  <link rel="stylesheet" href="luna.css">
+  <script type="module" src="new-tab.js"></script>
+</head>
+<body>
+  <main class="window" aria-labelledby="window-title">
+    <header class="titlebar">
+      <span class="window-icon" aria-hidden="true"></span>
+      <h1 id="window-title">Search the Web</h1>
+    </header>
+    <div class="window-body">
+      <form class="search" action="https://www.google.com/search" method="get" role="search">
+        <label for="query">Google Search</label>
+        <div class="search-controls">
+          <input id="query" name="q" type="search" required autocomplete="off" spellcheck="false">
+          <button type="submit" class="command primary">Search</button>
+        </div>
+      </form>
+      <section class="shortcuts" aria-labelledby="shortcuts-title">
+        <div class="section-heading">
+          <h2 id="shortcuts-title">Shortcuts</h2>
+          <button id="manage" class="link-command" type="button" aria-controls="file-tools" aria-expanded="false">Manage shortcuts</button>
+        </div>
+        <div id="file-tools" class="file-tools" hidden>
+          <button id="import" type="button" class="command">Import</button>
+          <button id="export" type="button" class="command">Export</button>
+          <input id="import-file" type="file" accept=".json,application/json" hidden>
+        </div>
+        <ul id="shortcut-list" class="shortcut-list"></ul>
+        <p id="status" class="status" role="status"></p>
+      </section>
+    </div>
+  </main>
+  <dialog id="editor" aria-labelledby="editor-heading">
+    <form id="edit-form">
+      <header class="titlebar"><h2 id="editor-heading"></h2></header>
+      <div class="dialog-body">
+        <label for="shortcut-title">Name</label>
+        <input id="shortcut-title" required maxlength="120" autofocus>
+        <label for="shortcut-url">Web address</label>
+        <input id="shortcut-url" type="url" required placeholder="https://example.com">
+        <p id="editor-error" class="status" role="alert"></p>
+        <p id="editor-status" class="status" role="status"></p>
+        <div id="edit-tools" class="dialog-actions" hidden>
+          <button id="move-up" type="button" class="command">Move earlier</button>
+          <button id="move-down" type="button" class="command">Move later</button>
+          <button id="remove" type="button" class="command">Remove</button>
+        </div>
+        <div class="dialog-actions submit-actions">
+          <button type="submit" class="command primary">Save</button>
+          <button id="cancel" type="button" class="command">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

@@ -155,6 +155,40 @@ def write_caption_buttons():
     write_png(IMAGE_DIR / "caption-buttons.png", 3 * slot_width, rows, color_type=6)
 
 
+def write_new_tab_icon():
+    # A small browser window, aligned to the native 16px tab-icon grid.
+    pixels = [
+        "................",
+        ".oooooooooooooo.",
+        ".ohhhhhhhhhhhho.",
+        ".obbbbbbbbbbbbo.",
+        ".oooooooooooooo.",
+        ".oppppppppppppo.",
+        ".opwwwwwwwwwwpo.",
+        ".opwwwwwwwwwwpo.",
+        ".opwgggggwwwwpo.",
+        ".opwwwwwwwwwwpo.",
+        ".opwgggwwwwwwpo.",
+        ".opwwwwwwwwwwpo.",
+        ".oppppppppppppo.",
+        ".oooooooooooooo.",
+        "................",
+        "................",
+    ]
+    colors = {
+        ".": bytes(4), "o": bytes.fromhex("173D83FF"),
+        "h": bytes.fromhex("76ADFAFF"), "b": bytes.fromhex("2864C7FF"),
+        "p": bytes.fromhex("C1DBF9FF"), "w": bytes.fromhex("FEFCF4FF"),
+        "g": bytes.fromhex("8BAAD0FF"),
+    }
+    icons = IMAGE_DIR.parents[1] / "new-tab" / "icons"
+    icons.mkdir(parents=True, exist_ok=True)
+    for scale in (1, 2):
+        rows = [b"".join(colors[pixel] * scale for pixel in row) for row in pixels]
+        write_png(icons / f"window-{16 * scale}.png", 16 * scale,
+                  [row for row in rows for _ in range(scale)], color_type=6)
+
+
 if __name__ == "__main__":
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
     write_gradient("frame.png", FRAME)
@@ -163,3 +197,4 @@ if __name__ == "__main__":
     write_tab_surface("tabs-inactive.png", FRAME_INACTIVE, BACKGROUND_TAB_FACE_INACTIVE)
     write_toolbar()
     write_caption_buttons()
+    write_new_tab_icon()
