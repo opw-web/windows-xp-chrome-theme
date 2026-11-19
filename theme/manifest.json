@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Luna Chrome",
+  "version": "0.3.0",
+  "description": "A glossy Luna Blue theme for Google Chrome.",
+  "theme": {
+    "images": {
+      "theme_frame": "images/frame.png",
+      "theme_frame_inactive": "images/frame-inactive.png",
+      "theme_tab_background": "images/tabs.png",
+      "theme_tab_background_inactive": "images/tabs-inactive.png",
+      "theme_toolbar": "images/toolbar.png",
+      "theme_window_control_background": "images/caption-buttons.png",
+      "theme_ntp_background": "images/bliss.png"
+    },
+    "colors": {
+      "frame": [40, 100, 199],
+      "frame_inactive": [65, 102, 157],
+      "background_tab": [40, 100, 199],
+      "background_tab_inactive": [65, 102, 157],
+      "tab_background_text": [255, 255, 255],
+      "tab_background_text_inactive": [249, 252, 255],
+      "tab_text": [23, 62, 118],
+      "toolbar": [163, 192, 231],
+      "toolbar_text": [23, 62, 118],
+      "toolbar_button_icon": [23, 62, 118],
+      "bookmark_text": [23, 62, 118],
+      "omnibox_background": [255, 255, 255],
+      "omnibox_text": [23, 62, 118],
+      "ntp_background": [34, 76, 153],
+      "ntp_text": [255, 255, 255]
+    },
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 0
+    }
+  }
+}
