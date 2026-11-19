@@ -53,7 +53,7 @@ shortcut list.
 | Frame and inactive tabs | Glossy royal blue sampled from the Seelen reference. The tab textures use frame blue where the tab outline curves and a beveled face across the straighter middle. Unfocused windows use a quieter blue. |
 | Selected tab and toolbar | The shared texture paints a pale rectangular-looking face on the selected tab. Frame blue masks its curved shoulders in the focused window. A separate icy band starts the toolbar. |
 | Window controls | Windows Chrome samples a three-slot PNG for compact blue minimize and maximize plates and a red close plate. The plates are positioned behind Chrome's own symbols. |
-| New tab button | A wider band of matching blue blends the native plus button into the tab strip at rest. Chrome controls its shape and interaction states. |
+| New tab button | The native plus button uses the theme's tab-strip palette. Chrome controls its shape and interaction states. |
 | Address bar | The manifest requests a white field and dark-blue text. Chrome computes the appearance of the interaction states. |
 | New Tab | A centered, full-color photo behind Chrome's standard controls. Chrome displays a theme PNG at its native size and crops it to the window. The bundled image is sized for desktop use, including the reference display at 200% scale. |
 

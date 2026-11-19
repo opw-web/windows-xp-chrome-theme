@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Luna Chrome",
-  "version": "0.4.0",
+  "name": "Luna Chrome XP",
+  "version": "0.3.7",
   "description": "A glossy Luna Blue theme for Google Chrome.",
   "theme": {
     "images": {
@@ -14,26 +14,87 @@
       "theme_ntp_background": "images/bliss.png"
     },
     "colors": {
-      "frame": [40, 100, 199],
-      "frame_inactive": [65, 102, 157],
-      "background_tab": [40, 100, 199],
-      "background_tab_inactive": [65, 102, 157],
-      "tab_background_text": [255, 255, 255],
-      "tab_background_text_inactive": [249, 252, 255],
-      "tab_text": [23, 62, 118],
-      "toolbar": [163, 192, 231],
-      "toolbar_text": [23, 62, 118],
-      "toolbar_button_icon": [23, 62, 118],
-      "bookmark_text": [23, 62, 118],
-      "omnibox_background": [255, 255, 255],
-      "omnibox_text": [23, 62, 118],
-      "ntp_background": [34, 76, 153],
-      "ntp_text": [255, 255, 255]
+      "frame": [
+        40,
+        100,
+        199
+      ],
+      "frame_inactive": [
+        65,
+        102,
+        157
+      ],
+      "background_tab": [
+        40,
+        100,
+        199
+      ],
+      "background_tab_inactive": [
+        65,
+        102,
+        157
+      ],
+      "tab_background_text": [
+        255,
+        255,
+        255
+      ],
+      "tab_background_text_inactive": [
+        249,
+        252,
+        255
+      ],
+      "tab_text": [
+        23,
+        62,
+        118
+      ],
+      "toolbar": [
+        163,
+        192,
+        231
+      ],
+      "toolbar_text": [
+        23,
+        62,
+        118
+      ],
+      "toolbar_button_icon": [
+        23,
+        62,
+        118
+      ],
+      "bookmark_text": [
+        23,
+        62,
+        118
+      ],
+      "omnibox_background": [
+        255,
+        255,
+        255
+      ],
+      "omnibox_text": [
+        23,
+        62,
+        118
+      ],
+      "ntp_background": [
+        34,
+        76,
+        153
+      ],
+      "ntp_text": [
+        255,
+        255,
+        255
+      ]
     },
     "properties": {
       "ntp_background_alignment": "center",
       "ntp_background_repeat": "no-repeat",
       "ntp_logo_alternate": 0
     }
-  }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvCVZBhZa5okh38em+ar84V50YCZ+UXUL7Bo16jgSTtyhfeuhGLPFSZbwyiP4GqHPVEqwdDkadq6BJMEZaq9rU5d0Pyx5fx2M1MsTYRrrr7eh3936Y5CTcJpbEsuc/NHoRrcJzDQPpSZzxvT4dgMAexwHwIiZJgGN7cuHFVhvtcpUoACwtganuqPQMDu38HzoBdIpD4CxbCO5gosT7EkkA3ij5SJPaEXplTPbT0274bsQkQIJO44fCaIIn8HQTDc9aaUg9GDFSIDCmMy0rP1k9SFsxxma0TaBOtDhs709W0H4L4e962u9HMYXMcOlHSd0SaXbg29W+F6l5NQaJv29RwIDAQAB"
 }
