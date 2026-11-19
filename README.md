@@ -1,50 +1,54 @@
-# Luna Chrome
+# Windows XP Chrome
 
-A permission-free Google Chrome theme tuned to the Windows XP Blue appearance
-in the Seelen UI reference. The optional Luna New Tab extension adds a classic
-Google search panel and editable shortcuts over Bliss.
+Give Chrome a Windows XP look with the **Browser theme**. Add **New Tab** for the Bliss wallpaper, Google search, and editable shortcuts.
 
-## Restore the approved 0.3 theme
+## Install in Chrome
 
-Check out tag `v0.3.0` in a separate clone or download its source. Reset your
-current Chrome theme in **Settings → Appearance**, then load the tagged
-`theme` folder as an unpacked theme.
+If you have the **Windows XP Chrome** ZIP, extract it first. Inside **Windows XP Chrome**, you should see the **Browser theme** and **New Tab** folders. If you downloaded the GitHub source, see [Installing from source](#installing-from-source) for the folder names.
 
-## Install, update, or remove
+### 1. Open Extensions
 
-1. If the prototype is already installed, open `chrome://settings/appearance`
-   and use **Reset to default** under **Theme** to clear its cached artwork.
-2. Open `chrome://extensions` and turn on **Developer mode**.
-3. Select **Load unpacked** and choose this project's `theme` folder.
-4. To remove the theme, return to **Settings → Appearance → Theme** and use
-   **Reset to default**.
+Copy `chrome://extensions/` into Chrome’s address bar and press **Enter**.
 
-Chrome can give a separately chosen New Tab background priority over the one
-bundled in a theme. If Bliss is missing, clear that background in **Customize Chrome**
-and open a new tab.
+![Chrome's address bar showing chrome://extensions](docs/install/extensions-address.png)
 
-[Chrome's unpacked installation instructions](https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked)
-and [theme removal instructions](https://support.google.com/chrome_webstore/answer/148695).
+### 2. Turn on Developer mode
 
-## Use the Windows XP New Tab page
+Turn on **Developer mode** in the top-right corner. Then click **Load unpacked** in the top-left corner.
 
-1. Run `.\build_new_tab.ps1` in PowerShell from this
-   folder. This assembles a loadable extension in `dist/new-tab` with the
-   existing wallpaper.
-2. Open `chrome://extensions`, enable **Developer mode**, and use **Load
-   unpacked** on `dist/new-tab`. Open a new tab and choose **Keep it** if Chrome
-   asks whether to keep the changed New Tab page.
-3. Use **Manage shortcuts → Import** to open your local export, or **Add
-   shortcut** to enter sites individually. The edit button on each shortcut
-   lets you rename it, change its address, move it, or remove it.
+![The Developer mode switch and Load unpacked button highlighted on the Extensions page](docs/install/developer-mode.png)
 
-The extension asks only for local shortcut storage. Search goes straight to
-Google when you submit the form. Import appends new addresses in file order and
-skips existing addresses. Export makes a portable JSON file with names and URLs.
-Keep personal exports outside Git. Disabling Luna New Tab in
-`chrome://extensions` brings back Chrome's built-in New Tab and its shortcuts.
-Export before removing the extension if you want to keep the redesigned page's
-shortcut list.
+### 3. Load the Browser theme
+
+In the folder picker, open **Windows XP Chrome**, click **Browser theme** once to highlight it, then click **Select Folder**. Chrome applies the theme right away.
+
+![Browser theme and Select Folder highlighted in the Windows XP Chrome folder picker](docs/install/select-browser-theme.png)
+
+### 4. Load New Tab
+
+On the Extensions page, click **Load unpacked** again. In **Windows XP Chrome**, click **New Tab** once to highlight it, then click **Select Folder**.
+
+![New Tab and Select Folder highlighted in the Windows XP Chrome folder picker](docs/install/select-new-tab.png)
+
+Open a new tab to see Bliss and the search box. If Chrome asks whether to keep the new page, click **Keep it**.
+
+## Installing from source
+
+If your download contains `theme` and `new-tab`, use the same Chrome steps with these folders.
+
+| Install | Folder to select |
+| --- | --- |
+| Browser theme | `theme` |
+| New Tab | Run `.\build_new_tab.ps1` from the project folder in PowerShell, then select `dist\new-tab`. |
+
+## Manage or remove
+
+- **Shortcuts** — Open **Manage shortcuts → Import** to load an export, or use **Add shortcut** to add a site. Use **Export** to save a backup before removing the extension.
+- **New Tab** — Open `chrome://extensions/` and turn off or remove **Luna New Tab** to restore Chrome’s built-in page.
+- **Browser theme** — Open `chrome://settings/appearance` and click **Reset to default** next to **Theme**. To update or reinstall the theme, reset it first, then repeat step 3.
+- **Bliss wallpaper** — If you’re using only the theme and Bliss is missing, clear any custom background in **Customize Chrome** and open a new tab.
+
+To restore the approved 0.3 theme, download or check out tag `v0.3.0`, reset your current theme, and load the tagged `theme` folder.
 
 ## How the theme works
 
