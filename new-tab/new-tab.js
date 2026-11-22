@@ -226,16 +226,35 @@ query.form.addEventListener("submit", event => {
   }
 });
 
-chrome.storage.local.onChanged.addListener(changes => {
+function shortcutsChanged(changes) {
   if (!changes.shortcuts) return;
   shortcuts = changes.shortcuts.newValue ?? [];
   render();
-});
+}
 
 try {
-  ({ shortcuts = [] } = await chrome.storage.local.get("shortcuts"));
+  const storage = chrome.storage.local;
+  storage.onChanged.addListener(shortcutsChanged);
+  shortcuts = await navigator.locks.request("luna-shortcuts", async () => {
+    const { shortcuts: saved } = await storage.get("shortcuts");
+    if (saved !== undefined) return saved;
+
+    // The generic build has no personal data. A local setup can supply a seed.
+    let initial;
+    try {
+      const response = await fetch(new URL("initial-shortcuts.json", import.meta.url));
+      if (!response.ok) return [];
+      initial = readImport(await response.text());
+    } catch {
+      return [];
+    }
+    const seeded = mergeShortcuts([], initial);
+    await storage.set({ shortcuts: seeded });
+    return seeded;
+  });
   loading = false;
 } catch {
-  status.textContent = "Could not load shortcuts. Reload this page to try again.";
+  manage.disabled = true;
+  status.textContent = "Luna New Tab is unavailable. Open a fresh tab to reload it.";
 }
 render();
