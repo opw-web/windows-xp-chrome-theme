@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Google Search styling fixture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html { color-scheme: light; }
+    body { margin: 0; background: white; color: #202124; font: 16px Arial, sans-serif; }
+    .xrOgrb { padding-top: 16px; }
+    .LoygGf { display: block; }
+    .Xx7Mif { position: relative; }
+    .Xx7Mif.CTOaxb { position: fixed; inset: 0 0 auto; contain: size layout style; z-index: 999; }
+    #searchform { padding: 10px 12px; }
+    .NDnoQ { display: flex; min-height: 52px; }
+    #tsf { flex: 1; margin-inline-start: 80px; }
+    .A8SBwf { position: relative; }
+    .logo { position: absolute; inset-block-start: 6px; inset-inline-start: -72px; }
+    .RNNXgb { display: flex; min-height: 52px; max-width: 40rem; border-radius: 24px; }
+    #tsf textarea { flex: 1; min-width: 0; padding: 14px 6px 3px; line-height: 24px; }
+    .dRYYxd { display: flex; height: 50px; align-items: center; }
+    .dRYYxd [role="button"] { display: grid; place-items: center; width: 32px; height: 24px; }
+    .dRYYxd .vOY7J, .dRYYxd .vOY7J svg { height: 28px; }
+    #cnt > .rZj61 { position: relative; }
+    .VHFyob + #cnt > .rZj61 { margin-top: -12px; }
+    #cnt [role="list"] { display: flex; }
+    #cnt [role="listitem"] > a { display: block; }
+    .mXwfNd { display: flex; align-items: center; min-height: 48px; padding-inline: 10px; }
+    #rcnt { min-block-size: 130vh; padding: 12px; }
+    #search { max-width: 652px; margin-block-start: 16px; }
+    .ux3nGb { display: flex; align-items: center; gap: 6px; }
+    .h7Tj7e { position: relative; }
+    .iIXkZe { position: absolute; inset: auto -30px 0 -98px; height: 52px; background: linear-gradient(transparent, white); pointer-events: none; }
+    .h7Tj7e:has(details[open]) .iIXkZe { display: none; }
+    .FkX2oe { display: flex; gap: 24px; }
+    .pWvJNd { width: 652px; }
+    .ofHStc { box-sizing: border-box; width: 372px; padding: 12px; background: white; }
+    .hJYS7c { display: flex; overflow: hidden; }
+    .Ioqnib { display: flex; flex: none; width: 370px; }
+    .cRH23c { width: 338px; padding: 0 16px; }
+    @media (max-width: 780px) {
+      .FkX2oe { flex-direction: column; }
+      .pWvJNd, .ofHStc { width: auto; }
+    }
+    @media (prefers-color-scheme: dark) {
+      html { color-scheme: dark; }
+      body { margin: 0; background: #202124; color: #e8eaed; }
+    }
+  </style>
+</head>
+<body>
+  <div class="xrOgrb"></div>
+  <div class="LoygGf" style="height: 72px">
+    <div class="Xx7Mif" style="height: 72px">
+      <header id="searchform">
+        <div class="NDnoQ">
+          <form id="tsf" action="/search" role="search">
+            <div class="A8SBwf">
+              <a class="logo" href="/">Google</a>
+              <div class="RNNXgb">
+                <textarea class="gLFyf" name="q" aria-label="Search" rows="1">heat pumps</textarea>
+                <div class="dRYYxd">
+                  <div class="vOY7J" role="button" aria-label="Clear"><svg width="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M8 8 20 20m0-12L8 20" fill="none" stroke="currentColor"/></svg></div>
+                  <div role="button" aria-label="Search by voice">♩</div>
+                  <div role="button" aria-label="Search by image">◇</div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </header>
+    </div>
+  </div>
+  <div id="cnt">
+    <div class="Fgyi2e rZj61" role="navigation">
+      <div role="list">
+        <div role="listitem"><a role="link" aria-disabled="true"><div class="mXwfNd">All</div></a></div>
+        <div role="listitem"><a href="/search?q=heat+pumps&amp;udm=14"><div class="mXwfNd">Web</div></a></div>
+        <div role="listitem"><a href="/search?q=heat+pumps&amp;udm=2"><div class="mXwfNd">Images</div></a></div>
+        <div role="listitem"><a href="/search?q=heat+pumps&amp;udm=50"><div class="mXwfNd">AI Mode</div></a></div>
+      </div>
+    </div>
+    <main id="rcnt">
+      <div id="center_col">
+        <div id="overview-slot"></div>
+        <div id="search">
+          <div id="rso">
+            <article class="tF2Cxc"><a href="https://example.org/heat-pumps"><h3 class="LC20lb">How heat pumps work</h3></a></article>
+            <article class="tF2Cxc"><a href="https://example.org/about-ai"><h3>AI Overview</h3></a></article>
+          </div>
+        </div>
+      </div>
+      <aside id="rhs">Knowledge panel</aside>
+    </main>
+  </div>
+  <template id="overview-template">
+    <section class="hdzaWe">
+      <div class="ux3nGb">
+        <span aria-hidden="true">✦</span>
+        <div role="heading" aria-level="2">AI Overview</div>
+      </div>
+      <div class="h7Tj7e">
+        <div class="FkX2oe">
+          <div class="pWvJNd">
+            <div id="m-x-content">Heat pumps transfer heat from one place to another using a refrigerant. They can reverse that cycle to cool a home.</div>
+            <details><summary>Show more</summary><p>More of the original answer.</p></details>
+            <button type="button">Feedback</button>
+            <a href="/search?q=heat+pumps&amp;udm=50">Ask a follow-up</a>
+          </div>
+          <div>
+            <aside class="ofHStc">
+              <div class="hJYS7c">
+                <div class="Ioqnib"><div class="cRH23c"><a href="https://example.org/source">Source</a></div></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+        <div class="iIXkZe" aria-hidden="true"></div>
+      </div>
+    </section>
+  </template>
+</body>
+</html>
