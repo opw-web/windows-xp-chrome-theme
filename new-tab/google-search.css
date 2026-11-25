@@ -1,0 +1,234 @@
+@media (forced-colors: none) {
+  html[data-luna-search] {
+    --luna-search-font: Tahoma, "Segoe UI", sans-serif;
+    --luna-blue: #2864c7;
+    --luna-edge: #507ab4;
+    --luna-highlight: #8fb8f2;
+    --luna-toolbar-stripe: 8px;
+    --luna-title: linear-gradient(#6395dc, #3976d0 33%, #2864c7 42%, #235dbf 75%, #1746a3);
+    --luna-toolbar: linear-gradient(#46679a55, #25395738 55%, #111e3938);
+    --luna-tab: linear-gradient(#5879ac44, #2b436544 55%, #18284255);
+    --luna-tab-active: linear-gradient(#779fd56b, #3e60965e 58%, #263f6a55);
+    --luna-canvas: linear-gradient(#44649230, #26395816 180px);
+    --luna-window: #7699ce0d;
+    --luna-tabs-backdrop: #22242a;
+    --luna-result: linear-gradient(#7699ce22, #7699ce0d 44px);
+    --luna-bevel: inset 0 1px #8fb8f266, inset 1px 0 #8fb8f244, inset -1px -1px #25457688;
+  }
+
+  html[data-luna-search="light"] {
+    --luna-toolbar: linear-gradient(#fffefa, #f4f2e6 57%, #e4e0ce);
+    --luna-tab: linear-gradient(#f4f9ff, #e1ebfa 55%, #c5d6ed);
+    --luna-tab-active: linear-gradient(#fffefa, #f7f6ed 60%, #e9e5d6);
+    --luna-canvas: linear-gradient(#e6effc, #f4f7fc 170px);
+    --luna-window: #fff;
+    --luna-tabs-backdrop: #fff;
+    --luna-result: linear-gradient(#edf4ff, #fff 44px);
+    --luna-bevel: inset 0 1px #fff, inset 1px 0 #f8fbff, inset -1px -1px #91acd0;
+  }
+
+  /* Pin the existing wrapper and keep it in flow in both of Google's scroll states. */
+  html[data-luna-search] body > .xrOgrb:has(+ .LoygGf > .Xx7Mif > #searchform) {
+    padding-block-start: 0;
+  }
+
+  html[data-luna-search] body > .LoygGf:has(> .Xx7Mif > #searchform) {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 999;
+    block-size: auto !important;
+  }
+
+  html[data-luna-search] .LoygGf > .Xx7Mif:has(> #searchform) {
+    position: relative;
+    inset-block-start: 0 !important;
+    block-size: auto !important;
+    contain: style;
+    transform: none;
+  }
+
+  html[data-luna-search]:has(body > .LoygGf > .Xx7Mif > #searchform)
+    #cnt > :is(.rZj61, #top_nav, #hdtb, [role="navigation"]):has(a[href^="/search?"]) {
+    position: sticky;
+    inset-block-start: var(--luna-search-toolbar-height, auto);
+    margin-block-start: 0;
+    z-index: 998;
+    background-color: var(--luna-tabs-backdrop);
+  }
+
+  html[data-luna-search] #searchform {
+    padding-block: calc(var(--luna-toolbar-stripe) + 3px) 3px;
+  }
+
+  html[data-luna-search] #searchform > .NDnoQ {
+    min-block-size: 52px;
+    align-items: center;
+  }
+
+  html[data-luna-search] #searchform .A8SBwf > .logo {
+    inset-block-start: 50%;
+    translate: 0 -50%;
+  }
+
+  html[data-luna-search] #searchform .RNNXgb {
+    min-block-size: 40px;
+  }
+
+  html[data-luna-search] #searchform .RNNXgb .dRYYxd {
+    align-self: center;
+    block-size: 38px;
+  }
+
+  html[data-luna-search] #searchform .dRYYxd .vOY7J[role="button"],
+  html[data-luna-search] #searchform .dRYYxd .vOY7J[role="button"] svg {
+    block-size: 24px;
+  }
+
+  html[data-luna-search] #searchform .RNNXgb textarea[name="q"] {
+    padding-block: 7px 2px;
+  }
+
+  html[data-luna-search] :is(#top_nav, #hdtb, #cnt [role="navigation"]) .mXwfNd:not(.rNHry *) {
+    min-block-size: 40px;
+  }
+
+  html[data-luna-search] :is(#searchform, form#tsf:not(#searchform form), header.RHL8Vb) {
+    background-image: var(--luna-title), var(--luna-toolbar);
+    background-position: top;
+    background-size: 100% var(--luna-toolbar-stripe), 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 1px var(--luna-highlight), inset 0 -1px var(--luna-edge);
+  }
+
+  html[data-luna-search] :is(form#tsf, #searchform form, form[role="search"][action="/search"])
+    :is(input[name="q"], textarea[name="q"], button[type="submit"], input[type="submit"]) {
+    font-family: var(--luna-search-font);
+  }
+
+  html[data-luna-search] :is(.RNNXgb:has(:is(input[name="q"], textarea[name="q"])), .esoFne:has(textarea.ITIRGe)) {
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px #35518785, 0 0 0 1px var(--luna-edge);
+  }
+
+  html[data-luna-search] :is(.RNNXgb, .esoFne:has(textarea.ITIRGe)):focus-within {
+    box-shadow: inset 1px 1px 3px #35518785, 0 0 0 2px var(--luna-highlight);
+  }
+
+  html[data-luna-search] .RNNXgb :is(button[type="submit"], [role="button"]) {
+    border-radius: 2px;
+    background-image: var(--luna-tab);
+    box-shadow: var(--luna-bevel);
+  }
+
+  html[data-luna-search] .RNNXgb :is(button[type="submit"], [role="button"]):is(:hover, :focus-visible) {
+    background-image: var(--luna-tab-active);
+  }
+
+  html[data-luna-search] .esoFne textarea.ITIRGe {
+    font-family: var(--luna-search-font);
+  }
+
+  html[data-luna-search="light"] :is(.RNNXgb:has(:is(input[name="q"], textarea[name="q"])), .esoFne:has(textarea.ITIRGe)) {
+    background-color: #fff;
+  }
+
+  html[data-luna-search] :is(#top_nav, #hdtb, #cnt [role="navigation"]:has([role="listitem"] > a[href^="/search?"])) {
+    background-image: var(--luna-tab);
+    box-shadow: inset 0 -1px var(--luna-edge);
+  }
+
+  html[data-luna-search] :is(#top_nav, #hdtb, #cnt [role="navigation"] [role="list"])
+    :is([role="tab"], [role="listitem"]:has(> a), a[href^="/search?"]:not([role="listitem"] a)) {
+    font-family: var(--luna-search-font);
+    border-radius: 4px 4px 0 0;
+    background-image: var(--luna-tab);
+    box-shadow: var(--luna-bevel);
+  }
+
+  html[data-luna-search] :is(#top_nav, #hdtb, #cnt [role="navigation"] [role="list"])
+    :is([role="tab"]:hover, [role="listitem"]:hover, [aria-current="page"], [aria-selected="true"],
+        a:has([aria-current="page"]), [role="listitem"]:has(> a[role="link"][aria-disabled="true"]:not([href]))) {
+    border-radius: 4px 4px 0 0;
+    background-image: var(--luna-tab-active);
+    box-shadow: var(--luna-bevel), inset 0 -3px var(--luna-blue);
+  }
+
+  html[data-luna-search] :is(#rcnt, #cnt .WzWwpc[role="main"]) {
+    background-image: var(--luna-canvas);
+  }
+
+  html[data-luna-search] :is(#search, #rso) .tF2Cxc:has(a > h3.LC20lb):not([data-luna-overview] *) {
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--luna-edge);
+    border-radius: 3px;
+    background-image: var(--luna-result);
+    box-shadow: var(--luna-bevel);
+  }
+
+  html[data-luna-search] :is(#search, #rso) a[href] h3:not([data-luna-overview] *) {
+    font-family: var(--luna-search-font);
+    font-size: 1.0625rem;
+    text-decoration: underline;
+    text-underline-offset: .14em;
+  }
+
+  html[data-luna-search="light"] :is(#search, #rso) a:link h3:not([data-luna-overview] *) {
+    color: #204f9e;
+  }
+
+  html[data-luna-search] [data-luna-overview] {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    padding: clamp(12px, 1.6vw, 22px);
+    border: 1px solid var(--luna-edge);
+    border-radius: 5px;
+    background: var(--luna-title) top / 100% 5px no-repeat, var(--luna-window);
+    box-shadow: var(--luna-bevel), 0 2px 4px #1d3d6e24;
+  }
+
+  /* Google gives the answer and sources their own widths inside this flex row. */
+  html[data-luna-search] [data-luna-overview] .FkX2oe > :is(.pWvJNd, :has(> .ofHStc)) {
+    min-inline-size: 0;
+  }
+
+  html[data-luna-search] [data-luna-overview] :is(.pWvJNd > *, .ofHStc) {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+  }
+
+  /* Google's collapsed fade bleeds into the page gutter on its native layout. */
+  html[data-luna-search] [data-luna-overview] .iIXkZe {
+    inset-inline: 0 !important;
+  }
+
+  html[data-luna-search] [data-luna-overview] .ofHStc .Ioqnib {
+    max-inline-size: 100%;
+  }
+
+  html[data-luna-search] [data-luna-overview] .ofHStc .cRH23c {
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  html[data-luna-search] [data-luna-overview] .ux3nGb {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    margin-block-end: 12px;
+    padding: 5px 9px;
+    border: 1px solid var(--luna-edge);
+    border-radius: 3px;
+    background-image: var(--luna-tab);
+    box-shadow: var(--luna-bevel);
+  }
+
+  html[data-luna-search] [data-luna-overview] :is(h1, h2, [role="heading"]) {
+    font-family: var(--luna-search-font);
+  }
+
+  html[data-luna-search="light"] [data-luna-overview] .ux3nGb [role="heading"] {
+    color: #173e76;
+    font-weight: bold;
+  }
+}

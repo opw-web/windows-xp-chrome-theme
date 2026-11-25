@@ -1,11 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Luna New Tab",
-  "version": "1.0.2",
-  "description": "A Windows XP-inspired New Tab page with Google search and local shortcuts.",
+  "version": "1.2.0",
+  "description": "A Windows XP-inspired New Tab page with themed Google results and local shortcuts.",
   "icons": { "16": "icons/window-16.png", "32": "icons/window-32.png" },
   "chrome_url_overrides": { "newtab": "index.html" },
   "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search?*"],
+      "css": ["google-search.css"],
+      "js": ["google-search.js"],
+      "run_at": "document_start"
+    }
+  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"
   }

@@ -41,6 +41,12 @@ If your download contains `theme` and `new-tab`, use the same Chrome steps with 
 | Browser theme | `theme` |
 | New Tab | Run `.\build_new_tab.ps1` from the project folder in PowerShell, then select `dist\new-tab`. |
 
+## Style Google search results
+
+Luna styles tabs within Google Search automatically, including Images, Videos, News, Shopping, Forums, Web, and AI Mode. If Chrome prompts for access to **www.google.com**, allow it for the theme to apply. Separate Google apps such as Maps use their own appearance.
+
+To upgrade, update the files in the folder Chrome is already using, then click **Reload** on the **Luna New Tab** card in **chrome://extensions** and refresh open results. If you installed from source, the build script updates the files in the source build folder. Keeping the same installed folder preserves your shortcuts.
+
 ## Manage or remove
 
 - **Shortcuts** — Open **Manage shortcuts → Import** to load an export, or use **Add shortcut** to add a site. Use **Export** to save a backup before removing the extension.
